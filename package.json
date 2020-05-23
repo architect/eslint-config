@@ -18,6 +18,9 @@
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-import": "^2.20.2"
   },
+  "devDependencies": {
+    "eslint": "^7.1.0"
+  },
   "peerDependencies": {
     "eslint": ">= 7"
   },
@@ -42,8 +45,5 @@
   ],
   "publishConfig": {
     "access": "public"
-  },
-  "devDependencies": {
-    "eslint": "^7.1.0"
   }
 }
