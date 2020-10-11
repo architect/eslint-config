@@ -21,7 +21,7 @@ jobs:
     # Go
     steps:
     - name: Check out repo
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
 
     - name: Set up Node.js
       uses: actions/setup-node@v1
@@ -68,12 +68,12 @@ jobs:
     # Go
     steps:
       - name: Check out repo
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 10
+          node-version: 12
           registry-url: https://registry.npmjs.org/
 
       - name: Install
@@ -96,7 +96,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 10
+          node-version: 12
           registry-url: https://npm.pkg.github.com/
 
       # Publish to GitHub
