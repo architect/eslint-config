@@ -1,3 +1,4 @@
+/* eslint-disable filenames/match-regex */
 module.exports = {
   parserOptions: {
     ecmaVersion: 2018
