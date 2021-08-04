@@ -4,7 +4,8 @@ module.exports = {
     ecmaVersion: 11 // 2020
   },
   env: {
-    node: true
+    es6: true,
+    node: true,
   },
   extends: 'eslint:recommended',
   plugins: [
