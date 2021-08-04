@@ -1,11 +1,10 @@
 /* eslint-disable filenames/match-regex */
 module.exports = {
   parserOptions: {
-    ecmaVersion: 2018
+    ecmaVersion: 11 // 2020
   },
   env: {
-    node: true,
-    es6: true
+    node: true
   },
   extends: 'eslint:recommended',
   plugins: [
