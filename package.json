@@ -1,11 +1,12 @@
 {
   "name": "@architect/eslint-config",
-  "version": "1.0.1",
+  "version": "2.0.0-RC.2",
   "description": "Architect standard ESLint configuration",
   "main": "index.js",
   "scripts": {
     "lint": "eslint . --fix",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "rc": "npm version prerelease --preid RC"
   },
   "repository": {
     "type": "git",

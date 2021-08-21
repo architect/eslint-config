@@ -2,6 +2,17 @@
 
 ---
 
+## [2.0.0] 2021-08-21
+
+### Changed
+
+- Enable ES11 for >=Node 14.x
+- Allow `.` in linted filenames
+- Retire the ever-annoying `require-await` rule
+- Add `no-return-await` to prevent double-wrapped promises
+
+---
+
 ## [1.0.1] 2021-07-29
 
 ### Changed
