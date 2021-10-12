@@ -4,9 +4,10 @@
 
 ## [2.0.1] 2021-10-11
 
-### Fixed
+### Changed
 
-- Fix eslint plugin use of `peerDependencies`, which should improve reliability in later versions of npm
+- Updated dependencies
+- Added eslint plugins to `peerDependencies`, which should hopefully improve reliability in later versions of npm
 
 ---
 
