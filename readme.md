@@ -1,4 +1,4 @@
-[<img src="https://s3-us-west-2.amazonaws.com/arc.codes/architect-logo-500b@2x.png" width=500>](https://www.npmjs.com/package/@architect/eslint-config)
+[<img src="https://assets.arc.codes/architect-logo-500b@2x.png" width=500>](https://www.npmjs.com/package/@architect/eslint-config)
 
 ## [`@architect/eslint-config`](https://www.npmjs.com/package/@architect/eslint-config)
 
