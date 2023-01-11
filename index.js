@@ -4,6 +4,13 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 11 // 2020
   },
+  // parserOptions default source type is `script`; override to `module` because eslint bailed on #12675
+  overrides: [ {
+    files: [ '*.mjs' ],
+    parserOptions: {
+      sourceType: 'module',
+    }
+  } ],
   env: {
     es6: true,
     node: true,
@@ -52,5 +59,5 @@ module.exports = {
     'import/no-unresolved':       [ err, { commonjs: true, amd: true } ],
     // Ensure filesystem safe filenames
     'filenames/match-regex':      [ err, '^[a-z0-9-_.]+$', true ],
-  }
+  },
 }

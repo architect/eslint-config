@@ -2,6 +2,20 @@
 
 ---
 
+## [2.1.0] 2023-01-11
+
+### Added
+
+- Added support for ES modules when the file extension ends in `.mjs`
+- Added Node.js 18.x to CI
+
+
+### Changed
+
+- Updated dependencies
+
+---
+
 ## [2.0.1] 2021-10-11
 
 ### Changed
