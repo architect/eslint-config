@@ -2,6 +2,12 @@
 
 ---
 
+## [Unreleased] 2023-01-12
+
+### Fixed
+
+- Update eslint-plugin-import after some release thrash
+
 ## [2.1.0] 2023-01-11
 
 ### Added
