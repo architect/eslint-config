@@ -2,11 +2,21 @@
 
 ---
 
+## [2.1.2] 2023-09-07
+
+### Changed
+
+- Per eslint's change in v8.46.0, disable `no-return-await`
+
+---
+
 ## [2.1.1] 2023-01-12
 
 ### Fixed
 
 - Update eslint-plugin-import after some release thrash
+
+---
 
 ## [2.1.0] 2023-01-11
 

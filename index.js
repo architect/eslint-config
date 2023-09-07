@@ -49,7 +49,6 @@ module.exports = {
     'no-trailing-spaces':           err,
     'object-curly-spacing':       [ err, 'always' ],
     'quotes':                     [ err, 'single', { allowTemplateLiterals: true, avoidEscape: true } ],
-    'no-return-await':              err,
     'semi':                       [ err, 'never' ],
     'space-before-function-paren':  err,
     'space-infix-ops':              err,
