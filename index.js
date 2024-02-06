@@ -2,7 +2,7 @@ let off = 'off'
 let err = 'error'
 module.exports = {
   parserOptions: {
-    ecmaVersion: 11 // 2020
+    ecmaVersion: 12 // 2021
   },
   // parserOptions default source type is `script`; override to `module` because eslint bailed on #12675
   overrides: [ {
