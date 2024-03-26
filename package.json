@@ -1,6 +1,6 @@
 {
   "name": "@architect/eslint-config",
-  "version": "2.1.2",
+  "version": "3.0.0-RC.0",
   "description": "Architect standard ESLint configuration",
   "main": "index.js",
   "scripts": {
