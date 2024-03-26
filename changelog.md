@@ -2,6 +2,25 @@
 
 ---
 
+## [3.0.0] 2024-03-26
+
+### Added
+
+- Added new rules:
+  - `block-spacing` - https://eslint.style/rules/default/block-spacing
+  - `comma-dangle` (multiline) - https://eslint.style/rules/default/comma-dangle
+  - `no-mixed-operators` - https://eslint.style/rules/default/no-mixed-operators
+  - `space-before-blocks` - https://eslint.style/rules/default/space-before-blocks
+
+
+### Changed
+
+- Updated to ES2022 (v13)
+- Breaking change: disabled `global-require` erroring
+- Breaking change: removed support for Node.js 14.x (now EOL)
+
+---
+
 ## [2.1.2] 2023-09-07
 
 ### Changed
