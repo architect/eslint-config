@@ -1,41 +1,42 @@
-let off = 'off'
-let err = 'error'
-let s = '@stylistic/js/'
+const eslint = require('@eslint/js')
+const recommended = eslint.configs.recommended.rules
+const stylistic = require('@stylistic/eslint-plugin-js')
+const arc = require('./src/rules')
+const fp = require('eslint-plugin-fp')
+// TODO: re-enable eslint-plugin-import once eslint-plugin-import#2948 is fixed
+// const importPlugin = require('eslint-plugin-import')
 
-module.exports = {
-  parserOptions: {
-    ecmaVersion: 13, // 2022
+const ecmaVersion = 13 // 2022
+const ignores = [ './node_modules/' ]
+const off = 'off'
+const err = 'error'
+const s = '@stylistic/js/'
+
+const config = {
+  plugins: {
+    recommended,
+    arc,
+    '@stylistic/js': stylistic,
+    fp,
+    // importPlugin,
   },
-  // parserOptions default source type is `script`; override to `module` because eslint bailed on #12675
-  overrides: [ {
-    files: [ '*.mjs' ],
-    parserOptions: {
-      sourceType: 'module',
-    },
-  } ],
-  env: {
-    es6: true,
-    node: true,
-  },
-  extends: 'eslint:recommended',
-  plugins: [
-    '@stylistic/js',
-    'filenames',
-    'fp',
-    'import',
-  ],
   rules: {
+    // Previously on `eslint:recommended`:
+    ...recommended,
+
     // Disable rules from base configurations
     'arrow-body-style':                   off,
     'no-console':                         off,
     'no-inner-declarations':              off,
     'no-redeclare':                       off,
     'no-useless-escape':                  off,
+
     // Enable additional rules
     'global-require':                     off,
     'handle-callback-err':                err,
     [s + 'linebreak-style']:            [ err, 'unix' ],
     'no-cond-assign':                   [ err, 'always' ],
+
     // Style
     [s + 'array-bracket-spacing']:      [ err, 'always' ],
     [s + 'arrow-spacing']:                err,
@@ -61,9 +62,34 @@ module.exports = {
     [s + 'space-infix-ops']:              err,
     [s + 'spaced-comment']:               err,
     [s + 'template-curly-spacing']:       err,
-    // Modules must resolve
-    'import/no-unresolved':             [ err, { commonjs: true, amd: true } ],
+
     // Ensure filesystem safe filenames
-    'filenames/match-regex':            [ err, '^[a-z0-9-_.]+$', true ],
+    'arc/match-regex':                  [ err, '^[a-z0-9-_.]+$', true ],
+
+    // Modules must resolve
+    // 'import/no-unresolved':             [ err, { commonjs: true, amd: true } ],
   },
 }
+
+
+module.exports = [
+  // As of ESLint v9 flat config, *.js is assumed to be ESM, so undo that:
+  {
+    files: [ '**/*.js', '**/*.cjs' ],
+    ignores,
+    languageOptions: {
+      ecmaVersion,
+      sourceType: 'commonjs',
+    },
+    ...config,
+  },
+  {
+    files: [ '**/*.mjs' ],
+    ignores,
+    languageOptions: {
+      ecmaVersion,
+      sourceType: 'module',
+    },
+    ...config,
+  },
+]

@@ -2,10 +2,11 @@
 
 ---
 
-## [3.0.0] 2024-03-26
+## [3.0.0] 2024-04-18
 
 ### Added
 
+- Added ESLint v9 support
 - Added new rules:
   - `block-spacing` - https://eslint.style/rules/default/block-spacing
   - `comma-dangle` (multiline) - https://eslint.style/rules/default/comma-dangle
@@ -15,7 +16,10 @@
 
 ### Changed
 
+- Breaking change: now using ESLint v9's flat config format
 - Updated to ES2022 (v13)
+- Breaking change: `eslint-plugin-import` is not yet ESLint v9 compatible, so that has been disabled
+  - This will be restored as soon as the plugin has been updated, see: https://github.com/import-js/eslint-plugin-import/issues/2948
 - Breaking change: disabled `global-require` erroring
 - Breaking change: removed support for Node.js 14.x (now EOL)
 
