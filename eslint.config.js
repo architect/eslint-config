@@ -7,7 +7,6 @@ const fp = require('eslint-plugin-fp')
 // const importPlugin = require('eslint-plugin-import')
 
 const ecmaVersion = 13 // 2022
-const ignores = [ './node_modules/' ]
 const off = 'off'
 const err = 'error'
 const s = '@stylistic/js/'
@@ -76,7 +75,6 @@ module.exports = [
   // As of ESLint v9 flat config, *.js is assumed to be ESM, so undo that:
   {
     files: [ '**/*.js', '**/*.cjs' ],
-    ignores,
     languageOptions: {
       ecmaVersion,
       sourceType: 'commonjs',
@@ -85,7 +83,6 @@ module.exports = [
   },
   {
     files: [ '**/*.mjs' ],
-    ignores,
     languageOptions: {
       ecmaVersion,
       sourceType: 'module',
