@@ -2,11 +2,12 @@
   "name": "@architect/eslint-config",
   "version": "3.0.0-RC.1",
   "description": "Architect standard ESLint configuration",
-  "main": "index.js",
+  "main": "eslint.config.js",
   "scripts": {
     "lint": "eslint . --fix",
     "test": "npm run lint",
-    "rc": "npm version prerelease --preid RC"
+    "rc": "npm version prerelease --preid RC",
+    "vendor": "node scripts/vendor.js"
   },
   "repository": {
     "type": "git",
@@ -20,13 +21,19 @@
     "eslint-plugin-fp": "^2.3.0"
   },
   "devDependencies": {
-    "eslint": "^9.0.0"
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0"
   },
   "peerDependencies": {
     "eslint": ">= 9"
   },
   "author": "Ryan Block",
   "license": "Apache-2.0",
+  "files": [
+    "eslint.config.js",
+    "globals.js*",
+    "src"
+  ],
   "keywords": [
     "amazon",
     "api gateway",

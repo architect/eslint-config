@@ -6,6 +6,9 @@ const fp = require('eslint-plugin-fp')
 // TODO: re-enable eslint-plugin-import once eslint-plugin-import#2948 is fixed
 // const importPlugin = require('eslint-plugin-import')
 
+// TODO: export browser globals in an easily consumable way for Arc projects?
+const { node: globals } = require('./globals.json')
+
 const ecmaVersion = 13 // 2022
 const off = 'off'
 const err = 'error'
@@ -77,6 +80,7 @@ module.exports = [
     files: [ '**/*.js', '**/*.cjs' ],
     languageOptions: {
       ecmaVersion,
+      globals,
       sourceType: 'commonjs',
     },
     ...config,
@@ -85,6 +89,7 @@ module.exports = [
     files: [ '**/*.mjs' ],
     languageOptions: {
       ecmaVersion,
+      globals,
       sourceType: 'module',
     },
     ...config,
