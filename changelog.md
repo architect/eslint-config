@@ -21,7 +21,7 @@
 - Breaking change: `eslint-plugin-import` is not yet ESLint v9 compatible, so that has been disabled
   - This will be restored as soon as the plugin has been updated, see: https://github.com/import-js/eslint-plugin-import/issues/2948
 - Breaking change: disabled `global-require` erroring
-- Breaking change: removed support for Node.js 14.x (now EOL)
+- Breaking change: removed support for Node.js 14.x, 16.x (now EOL)
 
 ---
 
