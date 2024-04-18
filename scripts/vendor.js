@@ -15,17 +15,17 @@ async function main () {
     return a
   }
 
-  /* // Core JS
+  // Core JS
   const { builtin, es5, es2015, es2017, es2020, es2021 } = allGlobals
-  const common = [builtin, es5, es2015, es2017, es2020, es2021].reduce(aggregate, {}) */
+  const common = [ builtin, es5, es2015, es2017, es2020, es2021 ].reduce(aggregate, {})
 
   // Browser
   const { browser, worker, serviceworker } = allGlobals
-  const browserGlobals = [ browser, worker, serviceworker ].reduce(aggregate, {})
+  const browserGlobals = [ common, browser, worker, serviceworker ].reduce(aggregate, {})
 
   // Node
   const { node, nodeBuiltin, commonjs } = allGlobals
-  const nodeGlobals = [ node, nodeBuiltin, commonjs ].reduce(aggregate, {})
+  const nodeGlobals = [ common, node, nodeBuiltin, commonjs ].reduce(aggregate, {})
 
   const json = JSON.stringify({ node: nodeGlobals, browser: browserGlobals }, null, 2) + '\n'
   const dest = join(cwd, 'globals.json')

@@ -1,13 +1,14 @@
 const eslint = require('@eslint/js')
 const recommended = eslint.configs.recommended.rules
 const stylistic = require('@stylistic/eslint-plugin-js')
-const arc = require('./src/rules')
+const arcRules = require('./src/rules')
 const fp = require('eslint-plugin-fp')
 // TODO: re-enable eslint-plugin-import once eslint-plugin-import#2948 is fixed
 // const importPlugin = require('eslint-plugin-import')
 
 // TODO: export browser globals in an easily consumable way for Arc projects?
-const { node: globals } = require('./globals.json')
+const globals = require('./globals.json')
+const { node } = globals
 
 const ecmaVersion = 13 // 2022
 const off = 'off'
@@ -17,7 +18,7 @@ const s = '@stylistic/js/'
 const config = {
   plugins: {
     recommended,
-    arc,
+    arc: arcRules,
     '@stylistic/js': stylistic,
     fp,
     // importPlugin,
@@ -73,14 +74,13 @@ const config = {
   },
 }
 
-
-module.exports = [
+const arc = [
   // As of ESLint v9 flat config, *.js is assumed to be ESM, so undo that:
   {
     files: [ '**/*.js', '**/*.cjs' ],
     languageOptions: {
       ecmaVersion,
-      globals,
+      globals: node,
       sourceType: 'commonjs',
     },
     ...config,
@@ -89,9 +89,12 @@ module.exports = [
     files: [ '**/*.mjs' ],
     languageOptions: {
       ecmaVersion,
-      globals,
+      globals: node,
       sourceType: 'module',
     },
     ...config,
   },
 ]
+arc.globals = globals
+
+module.exports = arc
