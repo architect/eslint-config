@@ -81,6 +81,9 @@ jobs:
       - name: Install
         run: npm i
 
+      - name: Vendor
+        run: npm run vendor
+
       # Publish to npm
       - name: Publish @RC to npm
         if: contains(github.ref, 'RC')
