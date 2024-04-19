@@ -6,7 +6,6 @@ const fp = require('eslint-plugin-fp')
 // TODO: re-enable eslint-plugin-import once eslint-plugin-import#2948 is fixed
 // const importPlugin = require('eslint-plugin-import')
 
-// TODO: export browser globals in an easily consumable way for Arc projects?
 const globals = require('./globals.json')
 const { node } = globals
 
